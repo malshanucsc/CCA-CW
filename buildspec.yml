@@ -9,7 +9,14 @@ phases:
      build:
         commands:
           - aws s3 cp index.html s3://webapp-cca-cw
+     post_build:
+        commands:
+            - echo $CODEBUILD_RESOLVED_SOURCE_VERSION   
+            - COMMIT_ID=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-8)
+            - echo "{\"commitid\":\"$COMMIT_ID\"}">version.json
+            - cat version.json 
 
 artifacts:
    files:
       - deploy.sh
+      - 'version.json'

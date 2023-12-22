@@ -2,8 +2,9 @@ version: 0.2
 phases:
      install:
         commands:
-            - echo $pwd
-	    - pwd
+            - pwd
+            - ls
+        
 
      build:
         commands:

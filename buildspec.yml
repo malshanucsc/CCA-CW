@@ -8,7 +8,7 @@ phases:
 
      build:
         commands:
-          - aws s3 cp ./ s3://webapp-caa-cw
+          - aws s3 cp index.html s3://webapp-cca-cw
 
 artifacts:
    files:

@@ -1,0 +1,14 @@
+version: 0.2
+phases:
+     install:
+        commands:
+            - echo $pwd
+	    - pwd
+
+     build:
+        commands:
+          - aws s3 cp ./ s3://webapp-caa-cw
+
+artifacts:
+   files:
+      - deploy.sh

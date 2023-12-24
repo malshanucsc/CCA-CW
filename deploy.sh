@@ -2,7 +2,7 @@
 
 apt install jq
 cat version.json
-COMMIT_ID=$(cat version.json | jq -r '.commitId')
+COMMIT_ID=$(cat version.json | jq -r '.commitid')
 echo $COMMIT_ID
 INVALIDATION_JSON="{ \"DistributionId\": \"E2VN6ABMEOQ0CQ\",\"InvalidationBatch\": {\"Paths\": {\"Quantity\": 1,\"Items\": [ \"/*\"]},\"CallerReference\": \"$COMMIT_ID\"}}"
 echo $INVALIDATION_JSON

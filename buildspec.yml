@@ -8,7 +8,7 @@ phases:
 
      build:
         commands:
-          - aws s3 cp index.html s3://webapp-cca-cw
+          - aws s3 cp src s3://webapp-cca-cw -recursive
      post_build:
         commands:
             - echo $CODEBUILD_RESOLVED_SOURCE_VERSION   
